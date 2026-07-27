@@ -1,0 +1,14 @@
+[package]
+name = "nasaq_loader"
+description = "Multi-file module loader for Nasaq programs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_parser.workspace = true
+nasaq_syntax.workspace = true
+indexmap.workspace = true
+nasaq_registry.workspace = true

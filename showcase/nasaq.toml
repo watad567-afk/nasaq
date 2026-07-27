@@ -1,0 +1,17 @@
+# Nasaq project manifest — نَسَق
+[package]
+name = "showcase"
+version = "0.1.0"
+entry = "src/main.nq"
+
+[build]
+out_dir = "dist"
+runtime = "./runtime/core.nqr"
+
+[web]
+mount = "#app"
+component = "App"
+
+[dependencies]
+http = "0.1.0"
+json = "0.1.0"

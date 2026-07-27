@@ -1,0 +1,29 @@
+module counter
+
+export component Counter(start: Int = 0) {
+    state count: Int = start
+
+    view {
+        <section class="counter">
+            <h2>Count: { count }</h2>
+            <button on:click={ count = count + 1 }>
+                Increase
+            </button>
+        </section>
+    }
+
+    style scoped {
+        .counter {
+            display: grid;
+            gap: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+export fn main() {
+    // Node fallback when web mount is not used
+}

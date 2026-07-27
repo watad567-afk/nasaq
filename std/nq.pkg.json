@@ -1,0 +1,6 @@
+{
+  "name": "nasaq-std",
+  "version": "1.0.0",
+  "description": "Official Nasaq standard library",
+  "modules": ["math", "string"]
+}

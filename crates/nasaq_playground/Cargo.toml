@@ -1,0 +1,16 @@
+[package]
+name = "nasaq_playground"
+description = "Nasaq browser playground"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_codegen_js.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_hir.workspace = true
+nasaq_parser.workspace = true
+nasaq_resolver.workspace = true
+nasaq_syntax.workspace = true
+nasaq_types.workspace = true
+serde_json.workspace = true

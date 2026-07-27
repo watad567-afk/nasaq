@@ -1,0 +1,9 @@
+// Hello World — first Nasaq program
+module hello
+
+extern fn println(value: String)
+
+export fn main() {
+    let greeting = "Hello, Nasaq!"
+    println(greeting)
+}

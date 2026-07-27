@@ -1,0 +1,23 @@
+name: Bug report
+description: Report a compiler, runtime, or tooling issue
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        ```nq
+        export fn main() { ... }
+        ```
+  - type: input
+    id: version
+    attributes:
+      label: Nasaq version
+      placeholder: nasaq 0.1.0

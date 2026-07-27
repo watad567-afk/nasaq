@@ -1,0 +1,15 @@
+export component Counter(start: Int = 0) {
+    state count: Int = start
+
+    view {
+        <section class="counter">
+            <span>{ count }</span>
+            <button on:click={ count = count + 1 }>+</button>
+        </section>
+    }
+
+    style scoped {
+        .counter { display: flex; gap: 1rem; align-items: center; }
+        button { padding: 0.4rem 0.8rem; cursor: pointer; }
+    }
+}

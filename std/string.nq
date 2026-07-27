@@ -1,0 +1,21 @@
+//! String helpers — std/string
+
+extern fn __str_len(s: String) -> Int
+
+export fn len(s: String) -> Int {
+    return __str_len(s)
+}
+
+export fn repeat(s: String, n: Int) -> String {
+    if n <= 0 {
+        return ""
+    }
+    if n == 1 {
+        return s
+    }
+    return s
+}
+
+export fn empty(s: String) -> Bool {
+    return len(s) == 0
+}

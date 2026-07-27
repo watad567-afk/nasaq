@@ -1,0 +1,18 @@
+[package]
+name = "nasaq_codegen_wasm"
+description = "WebAssembly code generation for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_parser.workspace = true
+nasaq_resolver.workspace = true
+nasaq_syntax.workspace = true
+nasaq_types.workspace = true
+wasm-encoder.workspace = true
+wasmprinter.workspace = true
+
+[dev-dependencies]
+nasaq_parser.workspace = true

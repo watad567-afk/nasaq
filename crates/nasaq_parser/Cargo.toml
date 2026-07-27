@@ -1,0 +1,15 @@
+[package]
+name = "nasaq_parser"
+description = "Recursive descent parser for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_lexer.workspace = true
+nasaq_syntax.workspace = true
+
+[dev-dependencies]
+pretty_assertions = "1"

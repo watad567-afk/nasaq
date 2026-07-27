@@ -1,0 +1,17 @@
+[package]
+name = "nasaq_test"
+description = "Integration and golden tests for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[dev-dependencies]
+nasaq_codegen_js.workspace = true
+nasaq_hir.workspace = true
+nasaq_loader.workspace = true
+nasaq_parser.workspace = true
+nasaq_resolver.workspace = true
+nasaq_syntax.workspace = true
+nasaq_types.workspace = true
+walkdir = "2"

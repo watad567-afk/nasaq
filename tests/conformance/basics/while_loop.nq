@@ -1,0 +1,13 @@
+// expect: ok
+export fn sum_to(n: Int) -> Int {
+    let mut total = 0
+    let mut i = 0
+    while i <= n {
+        total = total + i
+        i = i + 1
+    }
+    return total
+}
+export fn main() {
+    let x = sum_to(5)
+}

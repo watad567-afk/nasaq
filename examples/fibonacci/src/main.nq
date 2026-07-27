@@ -1,0 +1,16 @@
+module fibonacci
+
+extern fn println_int(value: Int)
+
+export fn fib(n: Int) -> Int {
+    if n <= 1 {
+        return n
+    }
+    return fib(n - 1) + fib(n - 2)
+}
+
+export fn main() {
+    let n = 10
+    let result = fib(n)
+    println_int(result)
+}

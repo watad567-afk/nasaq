@@ -1,0 +1,29 @@
+{
+  "name": "@nasaq/lang",
+  "version": "0.1.0",
+  "description": "Nasaq programming language — independent web language with .nq source",
+  "type": "module",
+  "bin": {
+    "nasaq": "./bin/nasaq.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "keywords": [
+    "nasaq",
+    "compiler",
+    "web",
+    "signals",
+    "arabic",
+    "nq"
+  ],
+  "license": "Apache-2.0 OR MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nasaq-lang/nasaq"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

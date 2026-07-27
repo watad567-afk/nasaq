@@ -1,0 +1,11 @@
+[package]
+name = "nasaq_registry"
+description = "Nasaq package registry and vendor installer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_syntax.workspace = true
+serde.workspace = true
+serde_json.workspace = true

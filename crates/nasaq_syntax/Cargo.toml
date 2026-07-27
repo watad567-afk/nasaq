@@ -1,0 +1,9 @@
+[package]
+name = "nasaq_syntax"
+description = "Source spans, files, and lossless syntax tree for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+smol_str.workspace = true

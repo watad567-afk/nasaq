@@ -1,0 +1,12 @@
+[package]
+name = "nasaq_cache"
+description = "Incremental compilation cache for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_loader.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2 = "0.10"

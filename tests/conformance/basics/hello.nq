@@ -1,0 +1,8 @@
+// expect: ok
+module basics_hello
+
+extern fn println(value: String)
+
+export fn main() {
+    println("Hello, Nasaq!")
+}

@@ -1,0 +1,6 @@
+[package]
+name = "nasaq_lint"
+description = "Official Nasaq linter"
+version.workspace = true
+edition.workspace = true
+license.workspace = true

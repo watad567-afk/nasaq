@@ -1,0 +1,12 @@
+//! I/O — std/io (host-backed)
+
+extern fn println(value: String)
+extern fn println_int(value: Int)
+
+export fn print_line(text: String) {
+    println(text)
+}
+
+export fn print_int(n: Int) {
+    println_int(n)
+}

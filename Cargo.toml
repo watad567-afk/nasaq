@@ -1,0 +1,75 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/nasaq_lexer",
+    "crates/nasaq_syntax",
+    "crates/nasaq_ast",
+    "crates/nasaq_parser",
+    "crates/nasaq_diagnostics",
+    "crates/nasaq_resolver",
+    "crates/nasaq_loader",
+    "crates/nasaq_cache",
+    "crates/nasaq_test_runner",
+    "crates/nasaq_types",
+    "crates/nasaq_hir",
+    "crates/nasaq_codegen_js",
+    "crates/nasaq_codegen_wasm",
+    "crates/nasaq_runtime",
+    "crates/nasaq_dom",
+    "crates/nasaq_ssr",
+    "crates/nasaq_fmt",
+    "crates/nasaq_lint",
+    "crates/nasaq_lsp",
+    "crates/nasaq_cli",
+    "crates/nasaq_test",
+    "crates/nasaq_playground",
+    "crates/nasaq_registry",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/nasaq-lang/nasaq"
+authors = ["Nasaq Contributors"]
+
+[workspace.dependencies]
+miette = { version = "7", features = ["fancy"] }
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+indexmap = "2"
+smol_str = "0.3"
+wasm-encoder = "0.220"
+wasmprinter = "0.220"
+
+nasaq_lexer = { path = "crates/nasaq_lexer" }
+nasaq_syntax = { path = "crates/nasaq_syntax" }
+nasaq_ast = { path = "crates/nasaq_ast" }
+nasaq_parser = { path = "crates/nasaq_parser" }
+nasaq_diagnostics = { path = "crates/nasaq_diagnostics" }
+nasaq_resolver = { path = "crates/nasaq_resolver" }
+nasaq_loader = { path = "crates/nasaq_loader" }
+nasaq_cache = { path = "crates/nasaq_cache" }
+nasaq_test_runner = { path = "crates/nasaq_test_runner" }
+nasaq_types = { path = "crates/nasaq_types" }
+nasaq_hir = { path = "crates/nasaq_hir" }
+nasaq_codegen_js = { path = "crates/nasaq_codegen_js" }
+nasaq_codegen_wasm = { path = "crates/nasaq_codegen_wasm" }
+nasaq_runtime = { path = "crates/nasaq_runtime" }
+nasaq_dom = { path = "crates/nasaq_dom" }
+nasaq_ssr = { path = "crates/nasaq_ssr" }
+nasaq_fmt = { path = "crates/nasaq_fmt" }
+nasaq_lint = { path = "crates/nasaq_lint" }
+nasaq_lsp = { path = "crates/nasaq_lsp" }
+nasaq_playground = { path = "crates/nasaq_playground" }
+nasaq_registry = { path = "crates/nasaq_registry" }
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.dev]
+debug = true

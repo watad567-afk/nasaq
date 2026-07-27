@@ -1,0 +1,35 @@
+[package]
+name = "nasaq_cli"
+description = "Official Nasaq command-line interface (nasaq)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "nasaq"
+path = "src/main.rs"
+
+[dependencies]
+clap.workspace = true
+miette.workspace = true
+nasaq_ast.workspace = true
+nasaq_cache.workspace = true
+nasaq_codegen_js.workspace = true
+nasaq_codegen_wasm.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_hir.workspace = true
+nasaq_loader.workspace = true
+nasaq_parser.workspace = true
+nasaq_playground.workspace = true
+nasaq_registry.workspace = true
+nasaq_resolver.workspace = true
+nasaq_runtime.workspace = true
+nasaq_ssr.workspace = true
+nasaq_syntax.workspace = true
+nasaq_test_runner.workspace = true
+nasaq_types.workspace = true
+nasaq_fmt.workspace = true
+nasaq_lint.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true

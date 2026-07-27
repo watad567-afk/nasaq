@@ -1,0 +1,21 @@
+[package]
+name = "nasaq_lsp"
+description = "Nasaq Language Server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "nasaq-lsp"
+path = "src/main.rs"
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_loader.workspace = true
+nasaq_parser.workspace = true
+nasaq_resolver.workspace = true
+nasaq_types.workspace = true
+nasaq_syntax.workspace = true
+serde.workspace = true
+serde_json.workspace = true

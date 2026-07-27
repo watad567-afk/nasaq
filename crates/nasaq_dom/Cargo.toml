@@ -1,0 +1,13 @@
+[package]
+name = "nasaq_dom"
+description = "Compiler-driven DOM code generation for Nasaq Web"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_syntax.workspace = true
+
+[dev-dependencies]
+nasaq_parser = { path = "../nasaq_parser" }

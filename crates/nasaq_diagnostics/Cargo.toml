@@ -1,0 +1,11 @@
+[package]
+name = "nasaq_diagnostics"
+description = "Diagnostics and error reporting for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+miette.workspace = true
+nasaq_syntax.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Nasaq",
+  "scopeName": "source.nasaq",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#strings" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [{
+        "name": "keyword.control.nasaq",
+        "match": "\\b(export|import|fn|let|mut|if|else|while|return|match|struct|component|state|view|style|scoped|extern|module|true|false)\\b"
+      }]
+    },
+    "strings": {
+      "name": "string.quoted.double.nasaq",
+      "begin": "\"",
+      "end": "\""
+    }
+  }
+}

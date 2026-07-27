@@ -1,0 +1,15 @@
+// expect: ok
+export component Counter(start: Int = 0) {
+    state count: Int = start
+    view { <span>{ count }</span> }
+}
+
+export component App() {
+    view {
+        <main>
+            <Counter start={5} />
+        </main>
+    }
+}
+
+export fn main() {}

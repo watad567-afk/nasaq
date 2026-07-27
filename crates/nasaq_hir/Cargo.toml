@@ -1,0 +1,10 @@
+[package]
+name = "nasaq_hir"
+description = "Typed high-level IR for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_syntax.workspace = true

@@ -1,0 +1,18 @@
+module structs
+
+extern fn println_str(value: String)
+
+export struct User {
+    name: String
+    age: Int
+}
+
+export fn describe(user: User) -> String {
+    return user.name
+}
+
+export fn main() {
+    let user = User { name: "Sara", age: 28 }
+    let name = describe(user)
+    println_str(name)
+}

@@ -1,0 +1,6 @@
+{
+  "name": "json",
+  "version": "0.1.0",
+  "description": "JSON helpers for Nasaq",
+  "entry": "src/json.nq"
+}

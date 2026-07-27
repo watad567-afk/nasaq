@@ -1,0 +1,56 @@
+{
+  "Component": {
+    "prefix": "comp",
+    "body": [
+      "export component ${1:Name}(${2:}) {",
+      "    state ${3:count}: Int = 0",
+      "    view {",
+      "        <${4:div}>",
+      "            { ${3:count} }",
+      "        </${4:div}>",
+      "    }",
+      "}"
+    ],
+    "description": "Nasaq component"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "export fn ${1:name}(${2:}) -> ${3:Int} {",
+      "    ${4:// body}",
+      "    return ${5:0}",
+      "}"
+    ],
+    "description": "Export function"
+  },
+  "View block": {
+    "prefix": "view",
+    "body": [
+      "view {",
+      "    <${1:div}>",
+      "        $0",
+      "    </${1:div}>",
+      "}"
+    ],
+    "description": "View block"
+  },
+  "State": {
+    "prefix": "state",
+    "body": "state ${1:name}: ${2:Int} = ${3:0}",
+    "description": "Component state"
+  },
+  "Import": {
+    "prefix": "imp",
+    "body": "import \"./${1:module}\";",
+    "description": "Import module"
+  },
+  "Test": {
+    "prefix": "test",
+    "body": [
+      "export fn test_${1:name}() {",
+      "    assert_eq(${2:actual}, ${3:expected})",
+      "}"
+    ],
+    "description": "Test function"
+  }
+}

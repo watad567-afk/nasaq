@@ -1,0 +1,12 @@
+[package]
+name = "nasaq_resolver"
+description = "Name resolution for Nasaq programs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_diagnostics.workspace = true
+indexmap.workspace = true
+nasaq_syntax.workspace = true

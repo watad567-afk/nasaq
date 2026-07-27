@@ -1,0 +1,28 @@
+//! Standard library — نَسَق std
+//! Import: `import "std/math";`
+
+export fn add(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+export fn sub(a: Int, b: Int) -> Int {
+    return a - b
+}
+
+export fn mul(a: Int, b: Int) -> Int {
+    return a * b
+}
+
+export fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        return a
+    }
+    return b
+}
+
+export fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        return a
+    }
+    return b
+}

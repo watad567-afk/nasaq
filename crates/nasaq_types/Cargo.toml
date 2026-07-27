@@ -1,0 +1,15 @@
+[package]
+name = "nasaq_types"
+description = "Type inference and checking for Nasaq"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_syntax.workspace = true
+indexmap.workspace = true
+
+[dev-dependencies]
+nasaq_parser = { path = "../nasaq_parser" }

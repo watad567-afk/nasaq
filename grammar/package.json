@@ -1,0 +1,13 @@
+name = "tree-sitter-nasaq"
+version = "0.1.0"
+description = "Tree-sitter grammar for Nasaq (نَسَق)"
+main = "grammar.js"
+keywords = ["tree-sitter", "nasaq"]
+license = "Apache-2.0 OR MIT"
+
+[dependencies]
+tree-sitter = "^0.21.0"
+
+[tree-sitter]
+scope = "source.nasaq"
+file-types = ["nq", "nasaq"]

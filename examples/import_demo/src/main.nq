@@ -1,0 +1,15 @@
+module import_demo
+
+import "./math";
+
+extern fn println_int(value: Int)
+extern fn assert_eq(left: Int, right: Int)
+
+export fn test_add() {
+    assert_eq(add(10, 32), 42)
+}
+
+export fn main() {
+    let sum = add(10, 32)
+    println_int(sum)
+}

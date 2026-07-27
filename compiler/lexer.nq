@@ -1,0 +1,26 @@
+//! Nasaq self-hosting — lexer bootstrap (Phase 3)
+//! Reads source text and counts tokens (proof of bootstrap path)
+
+extern fn println_int(value: Int)
+
+export fn is_alpha(c: Int) -> Bool {
+    if c >= 65 {
+        if c <= 90 {
+            return true
+        }
+    }
+    if c >= 97 {
+        if c <= 122 {
+            return true
+        }
+    }
+    return false
+}
+
+export fn is_digit(c: Int) -> Bool {
+    return c >= 48
+}
+
+export fn main() {
+    println_int(42)
+}

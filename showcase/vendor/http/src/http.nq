@@ -1,0 +1,7 @@
+export fn get(url: String) -> Int {
+    return 200
+}
+
+export fn ok(status: Int) -> Bool {
+    return status >= 200
+}

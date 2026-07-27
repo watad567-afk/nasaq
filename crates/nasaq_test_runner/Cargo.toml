@@ -1,0 +1,17 @@
+[package]
+name = "nasaq_test_runner"
+description = "Nasaq project test runner"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_ast.workspace = true
+nasaq_loader.workspace = true
+nasaq_diagnostics.workspace = true
+nasaq_resolver.workspace = true
+nasaq_types.workspace = true
+serde_json.workspace = true
+
+[dev-dependencies]
+nasaq_parser.workspace = true

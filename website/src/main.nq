@@ -1,0 +1,230 @@
+module nasaq_site
+
+export component NasaqSite() {
+    state demo: Int = 0
+    state visitors: Int = 1337
+    state sample: String = "component · state · view { } · style scoped { }"
+
+    view {
+        <main class="site">
+            <nav class="nav">
+                <div class="brand">
+                    <span class="logo">نَ</span>
+                    <span class="name">نَسَق — Nasaq</span>
+                </div>
+                <div class="links">
+                    <a href="#hero">الرئيسية</a>
+                    <a href="#features">الميزات</a>
+                    <a href="#demo">تجربة</a>
+                    <a href="#start">ابدأ</a>
+                </div>
+            </nav>
+
+            <section id="hero" class="hero">
+                <div class="hero-text">
+                    <span class="badge">مكتوب بالكامل بلغة نَسَق</span>
+                    <h1>مرحباً — هذا الموقع <em>نَسَق</em> وليس HTML</h1>
+                    <p class="lead">
+                        لغة برمجة مستقلة للويب: مكوّنات، إشارات، وواجهة تفاعلية —
+                        كل ما تراه هنا من ملف .nq واحد.
+                    </p>
+                    <div class="cta">
+                        <button class="btn primary" on:click={ visitors = visitors + 1 }>
+                            زيارة { visitors }
+                        </button>
+                        <a class="btn ghost" href="#demo">جرّب العداد</a>
+                    </div>
+                </div>
+                <div class="hero-code">
+                    <pre class="code">{ sample }</pre>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <h2>لماذا نَسَق؟</h2>
+                <div class="grid">
+                    <article class="card">
+                        <h3>⚡ سريعة</h3>
+                        <p>إشارات fine-grained بدون Virtual DOM.</p>
+                    </article>
+                    <article class="card">
+                        <h3>🧩 مكوّنات</h3>
+                        <p>component · state · view · style</p>
+                    </article>
+                    <article class="card">
+                        <h3>📦 toolchain</h3>
+                        <p>CLI · LSP · SSR · Wasm · test</p>
+                    </article>
+                    <article class="card">
+                        <h3>🌍 عربية</h3>
+                        <p>واجهة RTL ونصوص عربية أصلية.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="demo" class="demo">
+                <h2>عداد تفاعلي — بلغة نَسَق</h2>
+                <p>اضغط الزر وشاهد الإشارة تتحدّث مباشرة:</p>
+                <div class="counter-box">
+                    <span class="count-label">العدد:</span>
+                    <span class="count-value">{ demo }</span>
+                    <button class="btn primary" on:click={ demo = demo + 1 }>
+                        + زِد
+                    </button>
+                    <button class="btn ghost" on:click={ demo = 0 }>
+                        إعادة
+                    </button>
+                </div>
+            </section>
+
+            <section id="start" class="start">
+                <h2>شغّل الموقع</h2>
+                <pre class="install">cargo build --release
+nasaq website --port 8080
+nasaq run examples/hello</pre>
+                <p class="note">الأوامر: check · build · run · test · dev · ssr · wasm</p>
+            </section>
+
+            <footer class="footer">
+                <p>نَسَق Nasaq v1.0 — Apache-2.0 OR MIT</p>
+            </footer>
+        </main>
+    }
+
+    style scoped {
+        * { box-sizing: border-box; }
+        .site {
+            min-height: 100vh;
+            background: radial-gradient(900px 500px at 80% -10%, rgba(59,130,246,.2), transparent),
+                        radial-gradient(700px 400px at 10% 30%, rgba(6,182,212,.12), transparent),
+                        #070b14;
+            color: #e2e8f0;
+            font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+            line-height: 1.7;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            background: rgba(7,11,20,.9);
+            backdrop-filter: blur(8px);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; }
+        .logo {
+            width: 2.2rem; height: 2.2rem; border-radius: .6rem;
+            display: grid; place-items: center;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white; font-size: 1.1rem;
+        }
+        .links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+        .links a { color: #94a3b8; text-decoration: none; }
+        .links a:hover { color: white; }
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .badge {
+            display: inline-block;
+            padding: .25rem .75rem;
+            border-radius: 999px;
+            background: rgba(59,130,246,.15);
+            color: #93c5fd;
+            font-size: .85rem;
+        }
+        .hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.25; margin: 1rem 0; }
+        .hero h1 em { font-style: normal; color: #7dd3fc; }
+        .lead { color: #94a3b8; font-size: 1.05rem; max-width: 34rem; }
+        .cta { display: flex; gap: .75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .btn {
+            padding: .65rem 1.1rem;
+            border-radius: 10px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn.primary { background: #3b82f6; color: white; }
+        .btn.ghost { background: transparent; color: #e2e8f0; border: 1px solid #334155; }
+        .hero-code .code {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 1.25rem;
+            font-size: .8rem;
+            overflow: auto;
+            white-space: pre-wrap;
+            font-family: ui-monospace, monospace;
+        }
+        .features, .demo, .start {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+        }
+        .features h2, .demo h2, .start h2 { font-size: 1.7rem; margin-bottom: 1.25rem; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 14px;
+            padding: 1.25rem;
+        }
+        .card h3 { margin-top: 0; }
+        .card p { color: #94a3b8; margin-bottom: 0; }
+        .counter-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .count-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #7dd3fc;
+            min-width: 3rem;
+            text-align: center;
+        }
+        .count-label { color: #94a3b8; }
+        .install {
+            background: #020617;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 1rem;
+            font-family: ui-monospace, monospace;
+            white-space: pre-wrap;
+        }
+        .note { color: #64748b; }
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+        }
+        @media (max-width: 800px) {
+            .hero { grid-template-columns: 1fr; }
+        }
+    }
+}
+
+export fn main() {
+}

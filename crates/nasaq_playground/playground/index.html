@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nasaq Playground — نَسَق</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0b1020; --panel: #111827; --text: #e5e7eb; --accent: #2563eb; --muted: #94a3b8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 1rem 1.25rem; border-bottom: 1px solid #1f2937; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    h1 { font-size: 1.1rem; margin: 0; font-weight: 700; }
+    .sub { color: var(--muted); font-size: 0.85rem; }
+    main { display: grid; grid-template-columns: 1fr 1fr; min-height: calc(100vh - 64px); }
+    @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+    textarea { width: 100%; height: 100%; min-height: 360px; border: 0; padding: 1rem; background: var(--panel); color: #f9fafb; resize: vertical; font: 14px/1.5 ui-monospace, monospace; }
+    pre { margin: 0; padding: 1rem; background: #030712; overflow: auto; white-space: pre-wrap; font: 13px/1.5 ui-monospace, monospace; min-height: 360px; }
+    button { background: var(--accent); color: white; border: 0; border-radius: 8px; padding: 0.55rem 1rem; cursor: pointer; font-weight: 600; }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    .err { color: #fca5a5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>نَسَق — Nasaq Playground</h1>
+      <div class="sub">ترجم مباشرة عبر /api/compile</div>
+    </div>
+    <button id="run">ترجم الآن</button>
+  </header>
+  <main>
+    <textarea id="src">module playground
+
+extern fn println(value: String)
+
+export fn main() {
+    println("مرحباً من نَسَق!")
+}
+</textarea>
+    <pre id="out">// اضغط «ترجم الآن»</pre>
+  </main>
+  <script>
+    const src = document.getElementById('src');
+    const out = document.getElementById('out');
+    const btn = document.getElementById('run');
+
+    async function compile() {
+      btn.disabled = true;
+      out.textContent = 'جاري الترجمة...';
+      try {
+        const res = await fetch('/api/compile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ source: src.value })
+        });
+        const data = await res.json();
+        if (!data.ok) {
+          out.innerHTML = '<span class="err">' + (data.errors || ['compile failed']).join('\n') + '</span>';
+          return;
+        }
+        out.textContent = data.js;
+      } catch (e) {
+        out.innerHTML = '<span class="err">' + e.message + '</span>';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    btn.onclick = compile;
+    compile();
+  </script>
+</body>
+</html>

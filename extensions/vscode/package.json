@@ -1,0 +1,48 @@
+{
+  "name": "nasaq-lang",
+  "displayName": "Nasaq",
+  "description": "Nasaq (نَسَق) language support",
+  "version": "0.1.0",
+  "publisher": "nasaq-lang",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:nasaq", "onLanguage:nq"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [{
+      "id": "nasaq",
+      "aliases": ["Nasaq", "nasaq", "NQ"],
+      "extensions": [".nq", ".nasaq"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "nasaq",
+      "scopeName": "source.nasaq",
+      "path": "./syntaxes/nasaq.tmLanguage.json"
+    }],
+    "configurationDefaults": {
+      "[nasaq]": { "editor.tabSize": 4 }
+    },
+    "snippets": [{
+      "language": "nasaq",
+      "path": "./snippets/nasaq.code-snippets"
+    }],
+    "configuration": {
+      "title": "Nasaq",
+      "properties": {
+        "nasaq.lspPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to nasaq-lsp binary (defaults to PATH or workspace target/release)."
+        }
+      }
+    },
+    "commands": [{
+      "command": "nasaq.checkFile",
+      "title": "Nasaq: Check Current File"
+    }]
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

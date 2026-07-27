@@ -1,0 +1,9 @@
+[package]
+name = "nasaq_ast"
+description = "Abstract syntax tree for the Nasaq programming language"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+nasaq_syntax.workspace = true

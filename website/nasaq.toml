@@ -1,0 +1,12 @@
+[package]
+name = "nasaq_site"
+version = "1.0.0"
+entry = "src/main.nq"
+
+[build]
+out_dir = "dist"
+runtime = "./runtime/core.nqr"
+
+[web]
+mount = "#app"
+component = "NasaqSite"

@@ -1,0 +1,8 @@
+// expect: ok
+export fn is_even(n: Int) -> Bool {
+    return n % 2 == 0
+}
+
+export fn main() {
+    let x = is_even(4)
+}

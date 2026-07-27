@@ -1,0 +1,12 @@
+// expect: ok
+export component Counter(start: Int = 0) {
+    state count: Int = start
+
+    view {
+        <button on:click={ count = count + 1 }>
+            { count }
+        </button>
+    }
+}
+
+export fn main() {}

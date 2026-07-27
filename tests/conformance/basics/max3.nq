@@ -1,0 +1,12 @@
+// expect: ok
+export fn max3(a: Int, b: Int, c: Int) -> Int {
+    let m = if a > b { a } else { b }
+    if m > c {
+        return m
+    }
+    return c
+}
+
+export fn main() {
+    let x = max3(1, 9, 3)
+}

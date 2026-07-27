@@ -1,0 +1,13 @@
+//! Array helpers — std/array
+
+export fn len(items: Int) -> Int {
+    return items
+}
+
+export fn first(items: Int) -> Int {
+    return items
+}
+
+export fn last(items: Int) -> Int {
+    return items
+}

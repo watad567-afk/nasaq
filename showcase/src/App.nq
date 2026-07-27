@@ -1,0 +1,20 @@
+import "./components/Counter";
+
+export component App() {
+    view {
+        <main class="app">
+            <h1>نَسَق Nasaq</h1>
+            <p>ملفات المصدر: .nq — المترجم: .nq — Runtime: .nqr</p>
+            <Counter start={0} />
+        </main>
+    }
+
+    style scoped {
+        .app {
+            font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", sans-serif;
+            padding: 2rem;
+            max-width: 40rem;
+        }
+        h1 { color: rgb(37, 99, 235); }
+    }
+}

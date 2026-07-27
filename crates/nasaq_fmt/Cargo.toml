@@ -1,0 +1,6 @@
+[package]
+name = "nasaq_fmt"
+description = "Official Nasaq source formatter"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
