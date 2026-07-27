@@ -12,10 +12,12 @@
 ## Quick start
 
 ```bash
-cargo build --release
-nasaq new myapp --template web
+git clone https://github.com/watad567-afk/nasaq
+cd nasaq
+cargo build --release -p nasaq_cli --target-dir target3
+./target3/release/nasaq new myapp --template web
 cd myapp
-nasaq dev .
+../target3/release/nasaq dev .
 ```
 
 ## Global toolchain

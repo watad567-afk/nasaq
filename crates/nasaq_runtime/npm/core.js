@@ -25,10 +25,12 @@ export function identity(value) {
   return value;
 }
 
+/** Host stub for std/string.nq */
 export function __str_len(s) {
   return String(s).length;
 }
 
+/** Host stubs for registry json package */
 export function __json_stringify(value) {
   return JSON.stringify(value);
 }

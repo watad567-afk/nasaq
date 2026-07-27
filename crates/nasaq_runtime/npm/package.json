@@ -12,7 +12,7 @@
   "license": "Apache-2.0 OR MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nasaq-lang/nasaq"
+    "url": "https://github.com/watad567-afk/nasaq"
   },
   "keywords": ["nasaq", "runtime", "signals"]
 }
