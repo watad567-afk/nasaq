@@ -1096,11 +1096,11 @@ impl<'src> Parser<'src> {
     }
 
     pub(super) fn token_text(&self, token: &Token) -> String {
-        self.source[token.span.range()].to_string()
+        token.span.slice(self.source).to_string()
     }
 
     pub(super) fn current_token_text(&self) -> &str {
-        &self.source[self.current().span.range()]
+        self.current().span.slice(self.source)
     }
 
     pub(super) fn next_char(&self) -> Option<char> {

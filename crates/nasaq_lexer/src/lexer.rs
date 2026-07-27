@@ -17,14 +17,14 @@ pub struct Lexer<'src> {
 
 impl<'src> Lexer<'src> {
     pub fn new(source: &'src str) -> Self {
-        let mut lexer = Self {
+        let mut chars = source.char_indices();
+        let current = chars.next();
+        Self {
             source,
-            chars: source.char_indices(),
-            current: None,
+            chars,
+            current,
             offset: 0,
-        };
-        lexer.bump();
-        lexer
+        }
     }
 
     pub fn tokenize(mut self) -> Result<Vec<Token>, LexError> {
@@ -392,9 +392,9 @@ impl<'src> Lexer<'src> {
     }
 
     fn bump(&mut self) {
-        self.current = self.chars.next();
-        if let Some((idx, _)) = self.current {
-            self.offset = (idx + 1) as u32;
+        if let Some((idx, ch)) = self.current {
+            self.offset = (idx + ch.len_utf8()) as u32;
+            self.current = self.chars.next();
         } else {
             self.offset = self.source.len() as u32;
         }

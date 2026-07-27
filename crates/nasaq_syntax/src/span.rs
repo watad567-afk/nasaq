@@ -25,6 +25,24 @@ impl Span {
         self.start as usize..self.end as usize
     }
 
+    pub fn slice<'a>(self, source: &'a str) -> &'a str {
+        let len = source.len();
+        let mut start = self.start as usize;
+        let mut end = self.end as usize;
+        start = start.min(len);
+        end = end.min(len);
+        while start > 0 && !source.is_char_boundary(start) {
+            start -= 1;
+        }
+        while end < len && !source.is_char_boundary(end) {
+            end += 1;
+        }
+        if start > end {
+            return "";
+        }
+        &source[start..end]
+    }
+
     pub fn contains(self, offset: u32) -> bool {
         offset >= self.start && offset < self.end
     }
